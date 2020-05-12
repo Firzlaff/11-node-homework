@@ -13,10 +13,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-// for API Routes
-app.use("/api", require("../routes/apiRoutes"));
-// for HTML Routes 
-app.use("/html", require("../routes/HTMLRoutes"))
+// Router for API Routes
+require("../routes/apiRoutes")(app);
+// Router for HTML Routes
+require("../routes/htmlRoutes")(app);
 
 // Listen to the port provided above and signal that link was successful. 
 app.listen(PORT, ()=> console.log("Listening on PORT $(PORT)"));
