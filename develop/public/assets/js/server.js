@@ -17,3 +17,6 @@ app.use(express.static("public"));
 app.use("/api", require("../routes/apiRoutes"));
 // for HTML Routes 
 app.use("/html", require("../routes/HTMLRoutes"))
+
+// Listen to the port provided above and signal that link was successful. 
+app.listen(PORT, ()=> console.log("Listening on PORT $(PORT)"));
